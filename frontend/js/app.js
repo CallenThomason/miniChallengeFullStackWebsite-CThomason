@@ -1,7 +1,7 @@
 
 //----------------Elements---------------
 const username = document.getElementById("name-input");
-//const nameButton = document.getElementById("name-button"); 
+
 const nameOutput = document.getElementById("name-output");
 const nameForm = document.getElementById("user-form");
 
@@ -17,18 +17,19 @@ const compareOutput = document.getElementById("gnum-output");
 const compareOutPutTwo = document.getElementById("gnum-output-two"); 
 
 
-const url = "http://localhost:5153/api/challenge"
+const url = "http://localhost:5153/api/"
+
 //--------------Functions------------------
 
 async function compareNum(num1,num2){
-    const response = await fetch(`${url}/compare/${num1}/${num2}`)
+    const response = await fetch(`${url}greater/compare/${num1}/${num2}`)
     const data = await response.json();
     console.log(data);
     return data;
 }
 compareNum(1, 2); 
 async function addNum(num1, num2) {
-    const response = await fetch(`${url}/add/${num1}/${num2}`)
+    const response = await fetch(`${url}add/add/${num1}/${num2}`)
     const data = await response.json();
     console.log(data);
     return data;
@@ -36,7 +37,7 @@ async function addNum(num1, num2) {
 
 async function fetchName(newName) {
 
-    const response = await fetch(url + "/sayHello/" + newName);
+    const response = await fetch(url + "challenge/sayHello/" + newName);
     const data = await response.json();
     console.log(data);
     return data;

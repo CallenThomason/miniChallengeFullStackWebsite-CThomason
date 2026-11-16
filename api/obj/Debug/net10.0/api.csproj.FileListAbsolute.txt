@@ -31,3 +31,4 @@ C:\Users\calle\OneDrive\Desktop\LevelTwo\levelTwoHomework\miniChallengeFullStack
 C:\Users\calle\OneDrive\Desktop\LevelTwo\levelTwoHomework\miniChallengeFullStackWebsite-CThomason\api\obj\Debug\net10.0\api.pdb
 C:\Users\calle\OneDrive\Desktop\LevelTwo\levelTwoHomework\miniChallengeFullStackWebsite-CThomason\api\obj\Debug\net10.0\api.genruntimeconfig.cache
 C:\Users\calle\OneDrive\Desktop\LevelTwo\levelTwoHomework\miniChallengeFullStackWebsite-CThomason\api\obj\Debug\net10.0\ref\api.dll
+C:\Users\calle\OneDrive\Desktop\LevelTwo\levelTwoHomework\miniChallengeFullStackWebsite-CThomason\api\obj\Debug\net10.0\api.sourcelink.json
