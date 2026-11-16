@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SayHello</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-700">
+    <div class="flex justify-between bg-slate-200 p-4">
+        <h1 class="text-3xl font-bold">Mini Challenge-Say Hello</h1>
+        <a href="index.html" class="text-2xl underline">Home</a>
+    </div>
+   <form id="user-form" >
+    <input id="name-input" type="text"  class="flex bg-white p-2 w-80 mx-auto my-5" placeholder="Enter Name Here" required>
+    <button  type="submit" class="flex bg-white p-2 w-20 rounded-lg font-semibold mx-auto my-5" >Submit</button>
+    </form>
+    <p id="name-output" class="flex italic text-slate-200 p-2 justify-center my-5">No Name input</p>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
