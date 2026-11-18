@@ -11,5 +11,5 @@ Review: Everything looks and works good, but I believe we have to put each Mini 
 
 Second Peer Review: 
 
-Reviewer: 
-Review: 
+Reviewer: Chris Estrada
+Review: everything looks good and the design is clean. the code is separated and easy to read. My one suggestion for the restaurant picker would be to use capitalization and make it look more like a sentence. But overall really nice.
