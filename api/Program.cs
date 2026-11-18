@@ -1,3 +1,5 @@
+using api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddScoped<IChallengeServices, ChallengeServices>(); 
+builder.Services.AddScoped<IAddServices, AddServices>(); 
+builder.Services.AddScoped<IGreaterServices, GreaterServices>(); 
+builder.Services.AddScoped<IEightServices, EightServices>(); 
+builder.Services.AddScoped<IRestaurantServices, RestaurantServices>(); 
+builder.Services.AddScoped<IMadServices, MadServices>(); 
 
 builder.Services.AddCors(options =>
 {
@@ -38,3 +47,7 @@ app.UseCors("Frontend");
 app.MapControllers();
 
 app.Run();
+
+internal interface IMathServices
+{
+}

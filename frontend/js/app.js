@@ -16,10 +16,60 @@ const compareInputTwo = document.getElementById("num2");
 const compareOutput = document.getElementById("gnum-output");
 const compareOutPutTwo = document.getElementById("gnum-output-two"); 
 
+//8-ball
+
+const ballForm = document.getElementById("ball-form"); 
+const ballOutput = document.getElementById("ball-output"); 
+
+//Restuarant Picker
+const restuarantForm = document.getElementById("restaurant-form"); 
+const restuarantOutput = document.getElementById("restuarant-output"); 
+const restuarantInput = document.getElementById("restuarant-input"); 
+
+//Mad Lib
+const madForm = document.getElementById("mad-form"); 
+const madOutput = document.getElementById("mad-output"); 
+const madName = document.getElementById("mad-name-input"); 
+const animal = document.getElementById("animal-input"); 
+const another = document.getElementById("another-input"); 
+const madNum = document.getElementById("mad-num-input" ); 
+const noun = document.getElementById("noun-input"); 
+const color = document.getElementById("color-input"); 
+const verb = document.getElementById("verb-input"); 
+const place = document.getElementById("place-input"); 
+const adj = document.getElementById("adj-input"); 
+const food = document.getElementById("food-input"); 
+
+
 
 const url = "http://localhost:5153/api/"
 
 //--------------Functions------------------
+
+async function madLib(name, animal, another, num, noun, color, verb, place, adj, food) {
+
+    const response = await fetch(url + `mad/create/${name}/${animal}/${another}/${num}/${noun}/${color}/${verb}/${place}/${adj}/${food}`);
+    const data = await response.json();
+    console.log(data);
+    return data;
+
+}
+
+async function pickRes(choice) {
+
+    const response = await fetch(`${url}Restaurant/${choice}`);
+    const data = await response.json();
+    console.log(data);
+    return data;
+
+}
+
+async function eightBall(){
+    const response = await fetch(`${url}eight/response`);
+    const data = await response.json(); 
+    console.log(data); 
+    return data; 
+}
 
 async function compareNum(num1,num2){
     const response = await fetch(`${url}greater/compare/${num1}/${num2}`)
@@ -27,7 +77,7 @@ async function compareNum(num1,num2){
     console.log(data);
     return data;
 }
-compareNum(1, 2); 
+
 async function addNum(num1, num2) {
     const response = await fetch(`${url}add/add/${num1}/${num2}`)
     const data = await response.json();
@@ -45,6 +95,38 @@ async function fetchName(newName) {
 }
 
 //------------Listeneres----------------
+if (madForm != null) {
+    madForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const output = await madLib(madName.value, animal.value, another.value, madNum.value, noun.value, color.value, verb.value, place.value, adj.value, food.value);
+      
+        madOutput.textContent = output.response;
+        console.log("working");
+        madOutput.className = "flex text-slate-200 p-2 justify-center my-5";
+    });
+}
+
+if (restuarantForm != null) {
+    restuarantForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const output = await pickRes(restuarantInput.value);
+      
+        restuarantOutput.textContent = output.response;
+        console.log("working");
+        restuarantOutput.className = "flex text-slate-200 p-2 justify-center my-5";
+    });
+}
+
+if (ballForm != null) {
+    ballForm.addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const output = await eightBall();
+        
+        ballOutput.textContent = output.response;
+        console.log("working");
+        ballOutput.className = "flex text-slate-200 p-2 justify-center my-5";
+    });
+}
 if (addForm != null) {
     addForm.addEventListener("submit", async function (event) {
         event.preventDefault();
